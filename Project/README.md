@@ -1,12 +1,12 @@
-# 📁 Special Projects
+# Special Projects
 
-A collection of unique and specialized projects that don't fit into the main blockchain development categories.
+A collection of unique and specialized projects. Showcases creative uses of blockchain technology and modern web development.
 
-## 📋 Overview
+## Overview
 
-The Special Projects directory contains innovative applications and platforms that showcase creative uses of blockchain technology and modern web development.
+The Special Projects directory contains innovative applications and platforms that demonstrate creative uses of blockchain technology and modern web development.
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 Project/
@@ -14,16 +14,16 @@ Project/
 └── README.md                # This file
 ```
 
-## 🚀 Projects
+## Projects
 
-### 📱 ParkNotify Landing (`parknotify-landing/`)
+### ParkNotify Landing (parknotify-landing/)
 
-**Purpose**: Landing page for a decentralized parking coordination platform
+Purpose: Landing page for a decentralized parking coordination platform
 
-**Description**: 
+Description: 
 ParkNotify addresses the common problem of getting blocked in by parked cars with no way to contact the owner. This landing page serves as the entry point for users to learn about the platform and join the waitlist.
 
-**Key Features**:
+Key Features:
 - Modern, responsive design
 - Hero section with animated car image
 - About section explaining the problem and solution
@@ -31,40 +31,40 @@ ParkNotify addresses the common problem of getting blocked in by parked cars wit
 - Mobile-optimized interface
 - Smooth animations and transitions
 
-**Technology Stack**:
+Technology Stack:
 - Next.js 15.5.5
 - TypeScript
 - Tailwind CSS
 - Custom CSS animations
 
-**Target Audience**: 
+Target Audience: 
 - Drivers in African cities
 - Urban commuters
 - Parking coordination enthusiasts
 
-**Problem Solved**:
+Problem Solved:
 - Getting blocked by parked cars
 - No way to contact car owners
 - Poor parking coordination
 - Time wasted waiting for car owners
 
-**Solution**:
+Solution:
 - Decentralized parking coordination
 - Privacy-first approach
 - Blockchain-based identity
 - QR code system for car identification
 
-## 🎯 Project Goals
+## Project Goals
 
 ### ParkNotify Landing
 
-1. **User Acquisition**: Convert visitors to waitlist signups
-2. **Problem Education**: Clearly explain the parking problem
-3. **Solution Presentation**: Show how ParkNotify solves the problem
-4. **Trust Building**: Establish credibility and trust
-5. **Mobile Experience**: Provide excellent mobile user experience
+1. User Acquisition: Convert visitors to waitlist signups
+2. Problem Education: Clearly explain the parking problem
+3. Solution Presentation: Show how ParkNotify solves the problem
+4. Trust Building: Establish credibility and trust
+5. Mobile Experience: Provide excellent mobile user experience
 
-## 🚀 Getting Started
+## Getting Started
 
 ### ParkNotify Landing
 
@@ -82,7 +82,7 @@ npm run dev
 npm run build
 ```
 
-## 🎨 Design Philosophy
+## Design Philosophy
 
 ### Modern and Professional
 - Clean, minimalist design
@@ -102,12 +102,12 @@ npm run build
 - Efficient code
 - Minimal dependencies
 
-## 📱 Responsive Design
+## Responsive Design
 
 ### Breakpoints
-- **Mobile**: `< 768px` - Single column, hidden car image
-- **Tablet**: `768px - 1024px` - Optimized layout
-- **Desktop**: `> 1024px` - Full layout with car image
+- Mobile: < 768px - Single column, hidden car image
+- Tablet: 768px - 1024px - Optimized layout
+- Desktop: > 1024px - Full layout with car image
 
 ### Mobile Optimizations
 - Touch-friendly buttons
@@ -115,7 +115,7 @@ npm run build
 - Simplified navigation
 - Fast loading
 
-## 🔧 Development
+## Development
 
 ### Code Standards
 - TypeScript for type safety
@@ -129,7 +129,7 @@ npm run build
 - Code splitting
 - Bundle analysis
 
-## 🚀 Deployment
+## Deployment
 
 ### Build Process
 ```bash
@@ -141,12 +141,12 @@ npm run export
 ```
 
 ### Hosting Options
-- **Vercel**: Recommended for Next.js
-- **Netlify**: Static site hosting
-- **AWS S3**: Cloud hosting
-- **GitHub Pages**: Free hosting
+- Vercel: Recommended for Next.js
+- Netlify: Static site hosting
+- AWS S3: Cloud hosting
+- GitHub Pages: Free hosting
 
-## 📊 Analytics and Monitoring
+## Analytics and Monitoring
 
 ### User Analytics
 - Page views and sessions
@@ -160,7 +160,7 @@ npm run export
 - Error tracking
 - User experience metrics
 
-## 🔍 SEO and Marketing
+## SEO and Marketing
 
 ### SEO Optimization
 - Meta tags and descriptions
@@ -174,7 +174,7 @@ npm run export
 - Analytics tracking
 - A/B testing capabilities
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -182,16 +182,14 @@ npm run export
 4. Test thoroughly
 5. Submit a pull request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
-## 🔗 Resources
+## Resources
 
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs)
 
----
-
-**Built with ❤️ for innovative solutions**
+Built for innovative solutions

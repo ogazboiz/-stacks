@@ -1,35 +1,35 @@
-# 💰 Token Streaming System
+# Token Streaming System
 
-A decentralized payment streaming system built on the Stacks blockchain that enables continuous, time-based token transfers.
+A decentralized payment streaming system built on the Stacks blockchain. Enables continuous, time-based token transfers.
 
-## 📋 Overview
+## Overview
 
-The Token Streaming system allows users to create continuous payment streams where tokens are automatically transferred to recipients over a specified time period. This is particularly useful for salary payments, subscription services, and other recurring payment scenarios.
+The Token Streaming system allows users to create continuous payment streams where tokens are automatically transferred to recipients over a specified time period. Useful for salary payments, subscription services, and other recurring payment scenarios.
 
-## ✨ Features
+## Features
 
-- **Continuous Payments**: Stream tokens over time with automatic distribution
-- **Flexible Timeframes**: Set custom start and stop blocks for streams
-- **Withdrawal Management**: Recipients can withdraw available tokens at any time
-- **Stream Scheduling**: Create streams that start in the future
-- **Balance Tracking**: Monitor stream balances and withdrawal history
-- **Security**: Secure stream creation and management
+- Continuous Payments: Stream tokens over time with automatic distribution
+- Flexible Timeframes: Set custom start and stop blocks for streams
+- Withdrawal Management: Recipients withdraw available tokens at any time
+- Stream Scheduling: Create streams that start in the future
+- Balance Tracking: Monitor stream balances and withdrawal history
+- Security: Secure stream creation and management
 
-## 🏗️ Architecture
+## Architecture
 
 ### Smart Contract
 
-- **`stream.clar`**: Main streaming contract with core functionality
+- stream.clar: Main streaming contract with core functionality
 
 ### Key Functions
 
-- `stream-to`: Create a new payment stream
-- `withdraw`: Withdraw available tokens from a stream
-- `cancel-stream`: Cancel an active stream (sender only)
-- `get-stream-info`: Query stream information
-- `get-available-balance`: Check withdrawable balance
+- stream-to: Create a new payment stream
+- withdraw: Withdraw available tokens from a stream
+- cancel-stream: Cancel an active stream (sender only)
+- get-stream-info: Query stream information
+- get-available-balance: Check withdrawable balance
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -52,7 +52,7 @@ clarinet console
 
 ### Basic Usage
 
-1. **Create a Stream**
+1. Create a Stream
    ```clarity
    (contract-call? .stream stream-to
      'ST1RECEIVER123456789012345678901234567890
@@ -65,23 +65,23 @@ clarinet console
    )
    ```
 
-2. **Withdraw from Stream**
+2. Withdraw from Stream
    ```clarity
    (contract-call? .stream withdraw
      stream-id
    )
    ```
 
-3. **Cancel Stream**
+3. Cancel Stream
    ```clarity
    (contract-call? .stream cancel-stream
      stream-id
    )
    ```
 
-## 🧪 Testing
+## Testing
 
-Run the comprehensive test suite:
+Run the test suite:
 
 ```bash
 # Run all tests
@@ -103,7 +103,7 @@ npm run test:watch
 - Error handling and edge cases
 - Time-based payment logic
 
-## 📊 Stream Structure
+## Stream Structure
 
 Each stream contains:
 
@@ -121,7 +121,7 @@ Each stream contains:
 }
 ```
 
-## 💰 Payment Logic
+## Payment Logic
 
 ### Withdrawal Calculation
 
@@ -136,24 +136,24 @@ available_balance = min(
 
 ### Example
 
-- **Stream Duration**: 100 blocks
-- **Total Balance**: 100,000 tokens
-- **Payment per Block**: 1,000 tokens
-- **Current Block**: 50 (halfway through)
-- **Available**: 50,000 tokens
+- Stream Duration: 100 blocks
+- Total Balance: 100,000 tokens
+- Payment per Block: 1,000 tokens
+- Current Block: 50 (halfway through)
+- Available: 50,000 tokens
 
-## 🔒 Security Features
+## Security Features
 
-- **Authorization**: Only stream sender can cancel
-- **Balance Validation**: Prevents over-withdrawal
-- **Time Validation**: Ensures valid timeframes
-- **Reentrancy Protection**: Prevents reentrancy attacks
+- Authorization: Only stream sender cancel
+- Balance Validation: Prevents over-withdrawal
+- Time Validation: Ensures valid timeframes
+- Reentrancy Protection: Prevents reentrancy attacks
 
-## 🌐 Use Cases
+## Use Cases
 
 ### 1. Salary Payments
 - Stream monthly salary over 30 days
-- Employees can withdraw as needed
+- Employees withdraw as needed
 - Automatic distribution
 
 ### 2. Subscription Services
@@ -171,14 +171,14 @@ available_balance = min(
 - Regular distribution to investors
 - Transparent payment tracking
 
-## 📈 Performance Metrics
+## Performance Metrics
 
-- **Gas Efficiency**: Optimized for minimal transaction costs
-- **Scalability**: Supports multiple concurrent streams
-- **Accuracy**: Precise block-based calculations
-- **Reliability**: Secure and tamper-proof
+- Gas Efficiency: Optimized for minimal transaction costs
+- Scalability: Supports multiple concurrent streams
+- Accuracy: Precise block-based calculations
+- Reliability: Secure and tamper-proof
 
-## 🚀 Deployment
+## Deployment
 
 ### Testnet Deployment
 
@@ -194,54 +194,54 @@ clarinet deploy --testnet
 clarinet deploy --mainnet
 ```
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 
-- `STACKS_NETWORK`: Network configuration (testnet/mainnet)
-- `CONTRACT_ADDRESS`: Streaming contract address
-- `BLOCK_TIME`: Average block time for calculations
+- STACKS_NETWORK: Network configuration (testnet/mainnet)
+- CONTRACT_ADDRESS: Streaming contract address
+- BLOCK_TIME: Average block time for calculations
 
 ### Stream Parameters
 
-- **Minimum Stream Duration**: 1 block
-- **Maximum Stream Duration**: No limit
-- **Minimum Payment per Block**: 1 micro-STX
-- **Maximum Initial Balance**: No limit
+- Minimum Stream Duration: 1 block
+- Maximum Stream Duration: No limit
+- Minimum Payment per Block: 1 micro-STX
+- Maximum Initial Balance: No limit
 
-## 📚 API Reference
+## API Reference
 
 ### Read-Only Functions
 
-- `get-stream-info`: Get complete stream information
-- `get-available-balance`: Calculate withdrawable balance
-- `get-stream-count`: Get total number of streams
-- `is-stream-active`: Check if stream is currently active
+- get-stream-info: Get complete stream information
+- get-available-balance: Calculate withdrawable balance
+- get-stream-count: Get total number of streams
+- is-stream-active: Check if stream is currently active
 
 ### Public Functions
 
-- `stream-to`: Create new payment stream
-- `withdraw`: Withdraw available tokens
-- `cancel-stream`: Cancel active stream
-- `emergency-withdraw`: Emergency withdrawal (if implemented)
+- stream-to: Create new payment stream
+- withdraw: Withdraw available tokens
+- cancel-stream: Cancel active stream
+- emergency-withdraw: Emergency withdrawal (if implemented)
 
-## 🔍 Monitoring
+## Monitoring
 
 ### Stream Status
 
-- **Active**: Stream is currently running
-- **Completed**: Stream has reached end block
-- **Cancelled**: Stream was cancelled by sender
-- **Paused**: Stream is temporarily paused (if implemented)
+- Active: Stream is currently running
+- Completed: Stream has reached end block
+- Cancelled: Stream was cancelled by sender
+- Paused: Stream is temporarily paused (if implemented)
 
 ### Balance Tracking
 
-- **Total Balance**: Original stream amount
-- **Withdrawn Balance**: Amount already withdrawn
-- **Available Balance**: Currently withdrawable amount
-- **Remaining Balance**: Amount not yet available
+- Total Balance: Original stream amount
+- Withdrawn Balance: Amount already withdrawn
+- Available Balance: Currently withdrawable amount
+- Remaining Balance: Amount not yet available
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -249,16 +249,14 @@ clarinet deploy --mainnet
 4. Add comprehensive tests
 5. Submit a pull request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
-## 🔗 Resources
+## Resources
 
 - [Stacks Documentation](https://docs.stacks.co/)
 - [Clarity Language Reference](https://docs.stacks.co/references/clarity-language)
 - [Payment Streaming Concepts](https://docs.sablier.finance/)
 
----
-
-**Built with ❤️ on the Stacks blockchain**
+Built on the Stacks blockchain

@@ -1,35 +1,35 @@
-# 🎮 Blockchain Tic-Tac-Toe
+# Blockchain Tic-Tac-Toe
 
-A decentralized tic-tac-toe game built on the Stacks blockchain with betting mechanics and secure gameplay.
+A decentralized tic-tac-toe game built on the Stacks blockchain. Includes betting mechanics and secure gameplay.
 
-## 📋 Overview
+## Overview
 
-The Blockchain Tic-Tac-Toe game allows players to create and join games with STX betting. Players can bet STX tokens, and the winner takes the entire pot. The game is fully decentralized and runs entirely on the blockchain.
+The Blockchain Tic-Tac-Toe game allows players to create and join games with STX betting. Players bet STX tokens, and the winner takes the entire pot. The game runs entirely on the blockchain.
 
-## ✨ Features
+## Features
 
-- **Multiplayer Gaming**: Create and join games with other players
-- **STX Betting**: Bet STX tokens on game outcomes
-- **Secure Gameplay**: All moves and outcomes are recorded on-chain
-- **Winner Determination**: Automatic winner detection and payout
-- **Game History**: Track all games and outcomes
-- **Fair Play**: Tamper-proof game logic
+- Multiplayer Gaming: Create and join games with other players
+- STX Betting: Bet STX tokens on game outcomes
+- Secure Gameplay: All moves and outcomes are recorded on-chain
+- Winner Determination: Automatic winner detection and payout
+- Game History: Track all games and outcomes
+- Fair Play: Tamper-proof game logic
 
-## 🏗️ Architecture
+## Architecture
 
 ### Smart Contract
 
-- **`tic-tac-toe.clar`**: Main game contract with core functionality
+- tic-tac-toe.clar: Main game contract with core functionality
 
 ### Key Functions
 
-- `create-game`: Create a new game with betting
-- `join-game`: Join an existing game
-- `make-move`: Make a move in the game
-- `get-game-info`: Query game information
-- `get-game-board`: Get current game board state
+- create-game: Create a new game with betting
+- join-game: Join an existing game
+- make-move: Make a move in the game
+- get-game-info: Query game information
+- get-game-board: Get current game board state
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -52,21 +52,21 @@ clarinet console
 
 ### Basic Usage
 
-1. **Create a Game**
+1. Create a Game
    ```clarity
    (contract-call? .tic-tac-toe create-game
      u1000000  ; bet amount (1 STX in micro-STX)
    )
    ```
 
-2. **Join a Game**
+2. Join a Game
    ```clarity
    (contract-call? .tic-tac-toe join-game
      game-id
    )
    ```
 
-3. **Make a Move**
+3. Make a Move
    ```clarity
    (contract-call? .tic-tac-toe make-move
      game-id
@@ -74,9 +74,9 @@ clarinet console
    )
    ```
 
-## 🧪 Testing
+## Testing
 
-Run the comprehensive test suite:
+Run the test suite:
 
 ```bash
 # Run all tests
@@ -98,7 +98,7 @@ npm run test:watch
 - Error handling and edge cases
 - Board state management
 
-## 🎯 Game Rules
+## Game Rules
 
 ### Board Layout
 
@@ -112,21 +112,21 @@ npm run test:watch
 
 ### Game Flow
 
-1. **Player 1** creates a game with a bet amount
-2. **Player 2** joins the game (must match bet amount)
-3. **Player 1** makes the first move
-4. **Player 2** makes the second move
-5. **Alternating turns** until game ends
-6. **Winner** receives the entire pot
+1. Player 1 creates a game with a bet amount
+2. Player 2 joins the game (must match bet amount)
+3. Player 1 makes the first move
+4. Player 2 makes the second move
+5. Alternating turns until game ends
+6. Winner receives the entire pot
 
 ### Winning Conditions
 
-- **Row**: Three in a row horizontally
-- **Column**: Three in a column vertically
-- **Diagonal**: Three in a diagonal line
-- **Draw**: All positions filled with no winner
+- Row: Three in a row horizontally
+- Column: Three in a column vertically
+- Diagonal: Three in a diagonal line
+- Draw: All positions filled with no winner
 
-## 📊 Game Structure
+## Game Structure
 
 Each game contains:
 
@@ -141,14 +141,14 @@ Each game contains:
 }
 ```
 
-## 💰 Betting System
+## Betting System
 
 ### Betting Rules
 
-- **Minimum Bet**: 100 micro-STX (0.0001 STX)
-- **Bet Matching**: Second player must match the bet
-- **Winner Takes All**: Winner receives the entire pot
-- **Draw**: Bet amounts are returned to players
+- Minimum Bet: 100 micro-STX (0.0001 STX)
+- Bet Matching: Second player must match the bet
+- Winner Takes All: Winner receives the entire pot
+- Draw: Bet amounts are returned to players
 
 ### Payout Logic
 
@@ -157,15 +157,15 @@ Each game contains:
 ; Draw: Each player gets their bet back
 ```
 
-## 🔒 Security Features
+## Security Features
 
-- **Move Validation**: Prevents invalid moves
-- **Turn Enforcement**: Ensures proper turn order
-- **Bet Validation**: Prevents insufficient bets
-- **Game State Protection**: Prevents tampering
-- **Access Control**: Proper authorization for all actions
+- Move Validation: Prevents invalid moves
+- Turn Enforcement: Ensures proper turn order
+- Bet Validation: Prevents insufficient bets
+- Game State Protection: Prevents tampering
+- Access Control: Proper authorization for all actions
 
-## 🌐 Frontend Integration
+## Frontend Integration
 
 The game includes a React frontend for user interaction:
 
@@ -184,14 +184,14 @@ npm run dev
 - Betting interface
 - Winner announcement
 
-## 📈 Performance Metrics
+## Performance Metrics
 
-- **Gas Efficiency**: Optimized for minimal transaction costs
-- **Game Speed**: Fast move execution
-- **Scalability**: Supports multiple concurrent games
-- **Reliability**: Secure and tamper-proof gameplay
+- Gas Efficiency: Optimized for minimal transaction costs
+- Game Speed: Fast move execution
+- Scalability: Supports multiple concurrent games
+- Reliability: Secure and tamper-proof gameplay
 
-## 🚀 Deployment
+## Deployment
 
 ### Testnet Deployment
 
@@ -207,70 +207,70 @@ clarinet deploy --testnet
 clarinet deploy --mainnet
 ```
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 
-- `STACKS_NETWORK`: Network configuration (testnet/mainnet)
-- `CONTRACT_ADDRESS`: Game contract address
-- `MIN_BET_AMOUNT`: Minimum bet amount
+- STACKS_NETWORK: Network configuration (testnet/mainnet)
+- CONTRACT_ADDRESS: Game contract address
+- MIN_BET_AMOUNT: Minimum bet amount
 
 ### Game Parameters
 
-- **Board Size**: 3x3 grid
-- **Maximum Games**: No limit
-- **Game Timeout**: No timeout (games persist)
-- **Move Validation**: Strict validation rules
+- Board Size: 3x3 grid
+- Maximum Games: No limit
+- Game Timeout: No timeout (games persist)
+- Move Validation: Strict validation rules
 
-## 📚 API Reference
+## API Reference
 
 ### Read-Only Functions
 
-- `get-game-info`: Get complete game information
-- `get-game-board`: Get current board state
-- `get-game-count`: Get total number of games
-- `is-game-active`: Check if game is still active
-- `get-player-games`: Get games for a specific player
+- get-game-info: Get complete game information
+- get-game-board: Get current board state
+- get-game-count: Get total number of games
+- is-game-active: Check if game is still active
+- get-player-games: Get games for a specific player
 
 ### Public Functions
 
-- `create-game`: Create new game with betting
-- `join-game`: Join existing game
-- `make-move`: Make a move in the game
-- `forfeit-game`: Forfeit current game (if implemented)
+- create-game: Create new game with betting
+- join-game: Join existing game
+- make-move: Make a move in the game
+- forfeit-game: Forfeit current game (if implemented)
 
-## 🎮 Game Strategies
+## Game Strategies
 
 ### Winning Tips
 
-1. **Center Control**: Take the center position (4) first
-2. **Corner Strategy**: Control corners for multiple winning paths
-3. **Block Opponent**: Always block opponent's winning moves
-4. **Fork Creation**: Create multiple winning opportunities
+1. Center Control: Take the center position (4) first
+2. Corner Strategy: Control corners for multiple winning paths
+3. Block Opponent: Always block opponent's winning moves
+4. Fork Creation: Create multiple winning opportunities
 
 ### Common Patterns
 
-- **Center-Edge**: Center + opposite edges
-- **Corner-Corner**: Two corners + center
-- **Edge-Edge**: Two edges + center
+- Center-Edge: Center + opposite edges
+- Corner-Corner: Two corners + center
+- Edge-Edge: Two edges + center
 
-## 🔍 Game Monitoring
+## Game Monitoring
 
 ### Game States
 
-- **Waiting**: Game created, waiting for second player
-- **Active**: Game in progress
-- **Completed**: Game finished with winner
-- **Draw**: Game finished with no winner
+- Waiting: Game created, waiting for second player
+- Active: Game in progress
+- Completed: Game finished with winner
+- Draw: Game finished with no winner
 
 ### Statistics
 
-- **Total Games**: Number of games created
-- **Active Games**: Currently running games
-- **Completed Games**: Finished games
-- **Win Rate**: Player win statistics
+- Total Games: Number of games created
+- Active Games: Currently running games
+- Completed Games: Finished games
+- Win Rate: Player win statistics
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -278,16 +278,14 @@ clarinet deploy --mainnet
 4. Add comprehensive tests
 5. Submit a pull request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
-## 🔗 Resources
+## Resources
 
 - [Stacks Documentation](https://docs.stacks.co/)
 - [Clarity Language Reference](https://docs.stacks.co/references/clarity-language)
 - [Blockchain Gaming Concepts](https://docs.axieinfinity.com/)
 
----
-
-**Built with ❤️ on the Stacks blockchain**
+Built on the Stacks blockchain
