@@ -1,33 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import Script from "next/script";
+import Image from "next/image";
 
 export default function Home() {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // Store in localStorage (in production, send to backend)
-    const signups = JSON.parse(localStorage.getItem("parknotify-signups") || "[]");
-    signups.push({
-      name,
-      email,
-      timestamp: new Date().toISOString(),
-    });
-    localStorage.setItem("parknotify-signups", JSON.stringify(signups));
-
-    console.log("New signup:", { name, email });
-    console.log("Total signups:", signups.length);
-
-    setSubmitted(true);
-    setName("");
-    setEmail("");
-
-    setTimeout(() => setSubmitted(false), 5000);
-  };
 
   return (
     <div className="min-h-screen">
@@ -94,10 +70,13 @@ export default function Home() {
 
         {/* Car Image - Absolute positioned to break out of grid - Hidden on mobile */}
         <div className="hidden lg:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-          <img 
+          <Image 
             src="/ccar.png" 
             alt="Car" 
-            className="w-[1000px] h-[800px] object-contain drop-shadow-2xl "
+            width={1000}
+            height={800}
+            className="object-contain drop-shadow-2xl"
+            priority
           />
         </div>
       </section>
@@ -151,63 +130,39 @@ export default function Home() {
       {/* Email Signup */}
       <section id="signup" className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1877F2] mb-6">Join the Waitlist</h2>
+          {/* <h2 className="text-4xl md:text-5xl font-bold text-[#1877F2] mb-6">Join the Waitlist</h2>
           <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
             Be the first to know when ParkNotify launches in your city. Get early access and help us build the perfect solution for African drivers.
-          </p>
+          </p> */}
 
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 max-w-md mx-auto">
-            {submitted && (
-              <div className="mb-6 p-4 bg-green-100 text-green-800 rounded-lg border border-green-200">
-                <div className="flex items-center">
-                  <span className="text-green-600 mr-2">✓</span>
-                  <span className="font-medium">Thanks for signing up!</span>
-                </div>
-                <p className="text-sm mt-1">We&apos;ll notify you when we launch.</p>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Enter your full name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#1877F2] transition text-gray-900 placeholder-gray-500 bg-white hover:border-gray-300"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#1877F2] transition text-gray-900 placeholder-gray-500 bg-white hover:border-gray-300"
-                />
-              </div>
-              
-              <button
-                type="submit"
-                className="w-full text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg"
-                style={{ background: '#1877F2' }}
-              >
-                Join Waitlist
-              </button>
-            </form>
-
+          <div className=" rounded-2xl p-8 mx-auto">
+            {/* ConvertKit Form Container */}
+            <div id="convertkit-form-3cc2772453"  className="convertkit-form-container"></div>
+            
+            {/* ConvertKit Script */}
+            <Script
+              async
+              data-uid="3cc2772453"
+              src="https://ogazboiz.kit.com/3cc2772453/index.js"
+              strategy="afterInteractive"
+              onLoad={() => {
+                // Move the form to the correct container after it loads
+                setTimeout(() => {
+                  const form = document.querySelector('[data-uid="3cc2772453"]');
+                  const container = document.getElementById('convertkit-form-3cc2772453');
+                  if (form && container) {
+                    // Remove the form from its current location
+                    form.remove();
+                    // Add it to our container
+                    container.appendChild(form);
+                  }
+                }, 100);
+              }}
+            />
+{/*             
             <p className="text-xs text-gray-500 mt-4 text-center">
               We respect your privacy. No spam, ever.
-            </p>
+            </p> */}
           </div>
         </div>
       </section>

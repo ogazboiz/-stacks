@@ -120,3 +120,52 @@ body {
   animation-delay: 0.4s;
   opacity: 0;
 }
+
+/* ConvertKit Form Styling */
+#convertkit-form-3cc2772453 {
+  width: 100%;
+}
+
+#convertkit-form-3cc2772453 form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#convertkit-form-3cc2772453 input[type="email"],
+#convertkit-form-3cc2772453 input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+#convertkit-form-3cc2772453 input[type="email"]:focus,
+#convertkit-form-3cc2772453 input[type="text"]:focus {
+  outline: none;
+  border-color: #1877F2;
+}
+
+#convertkit-form-3cc2772453 button[type="submit"] {
+  width: 100%;
+  background-color: #1877F2;
+  color: white;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#convertkit-form-3cc2772453 button[type="submit"]:hover {
+  background-color: #1A73E1;
+}
+
+#convertkit-form-3cc2772453 .formkit-powered-by {
+  display: none;
+}
