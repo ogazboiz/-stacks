@@ -2,8 +2,10 @@
 
 import Script from "next/script";
 import Image from "next/image";
+import { useStacks } from "@/hooks/use-stacks";
 
 export default function Home() {
+  const { userAddress, connectWallet, disconnectWallet } = useStacks();
 
   return (
     <div className="min-h-screen">
@@ -17,13 +19,48 @@ export default function Home() {
             {/* Desktop Right Side */}
             <div className="hidden md:flex items-center space-x-6">
               <a href="#about" className="text-gray-900 hover:text-[#1877F2] px-3 py-2 text-[16px] font-semibold transition-colors duration-300">About</a>
+              {userAddress ? (
+                <div className="flex items-center space-x-4">
+                  <span className="text-gray-700 text-sm">
+                    {userAddress.substring(0, 6)}...{userAddress.substring(userAddress.length - 4)}
+                  </span>
+                  <button
+                    onClick={disconnectWallet}
+                    className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition-all duration-300 text-[16px] font-semibold"
+                  >
+                    Disconnect
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={connectWallet}
+                  className="bg-[#1877F2] text-white px-6 py-2 rounded-lg hover:bg-[#1A73E1] transition-all duration-300 text-[16px] font-semibold shadow-lg"
+                >
+                  Connect Wallet
+                </button>
+              )}
               <a href="#signup" className="bg-[#1877F2] text-white px-6 py-2 rounded-lg hover:bg-[#1A73E1] transition-all duration-300 text-[16px] font-semibold shadow-lg">
                 Join Waitlist
               </a>
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden">
+            <div className="md:hidden flex items-center space-x-2">
+              {userAddress ? (
+                <button
+                  onClick={disconnectWallet}
+                  className="text-gray-700 text-xs px-3 py-1.5 bg-gray-200 rounded"
+                >
+                  {userAddress.substring(0, 4)}...{userAddress.substring(userAddress.length - 4)}
+                </button>
+              ) : (
+                <button
+                  onClick={connectWallet}
+                  className="bg-[#1877F2] text-white px-4 py-2 rounded text-sm font-semibold"
+                >
+                  Connect
+                </button>
+              )}
               <button
                 className="text-gray-500 hover:text-[#1877F2] transition-colors duration-300"
                 aria-label="Toggle mobile menu"
