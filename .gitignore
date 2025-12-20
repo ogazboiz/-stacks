@@ -3,6 +3,7 @@ stacks-tic-tac-toe/
 
 # Ignore ogaboiz-drivers folder
 ogaboiz-drivers/
+ogaboiz-drivers.zip
 
 # Node modules
 node_modules/
