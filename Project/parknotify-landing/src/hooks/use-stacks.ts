@@ -34,7 +34,7 @@ export function useStacks() {
       const response = await connect();
       if (response?.addresses?.[0]?.address) {
         // Find the STX address (not BTC)
-        const stxAddress = response.addresses.find((addr: any) =>
+        const stxAddress = response.addresses.find((addr: { address: string }) =>
           addr.address.startsWith("SP") || addr.address.startsWith("ST")
         );
         if (stxAddress) {
