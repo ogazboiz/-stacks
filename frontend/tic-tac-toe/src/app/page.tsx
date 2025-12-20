@@ -1,4 +1,5 @@
 import { GamesList } from "@/components/games-list";
+import { ChainhooksManager } from "@/components/chainhooks-manager";
 import { getAllGames } from "@/lib/contract";
 
 export default async function Home() {
@@ -11,6 +12,9 @@ export default async function Home() {
         <span className="text-sm text-gray-500">
           Play 1v1 Tic Tac Toe on Stacks blockchain
         </span>
+      </div>
+      <div className="w-full max-w-4xl mb-8 px-4">
+        <ChainhooksManager />
       </div>
       <GamesList games={games} />
     </section>
