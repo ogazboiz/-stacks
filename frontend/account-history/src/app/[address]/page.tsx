@@ -2,6 +2,7 @@ import { TransactionsList } from "@/components/txns-list";
 import { fetchAddressTransactions } from "@/lib/fetch-address-transactions";
 import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
+import { ChainhooksManager } from "@/components/chainhooks-manager";
 
 // This is a DYNAMIC page!
 // If you visit /SP123ABC, the address will be "SP123ABC"
@@ -31,6 +32,11 @@ export default async function Activity({
           <ExternalLinkIcon className="h-4 w-4" />
           View on Hiro
         </Link>
+      </div>
+
+      {/* Chainhooks Manager */}
+      <div className="border-t pt-8">
+        <ChainhooksManager />
       </div>
 
       {/* The transaction list with Load More button */}
