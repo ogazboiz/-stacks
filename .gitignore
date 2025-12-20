@@ -1,6 +1,9 @@
 # Ignore the stacks-tic-tac-toe project folder
 stacks-tic-tac-toe/
 
+# Ignore ogaboiz-drivers folder
+ogaboiz-drivers/
+
 # Node modules
 node_modules/
 

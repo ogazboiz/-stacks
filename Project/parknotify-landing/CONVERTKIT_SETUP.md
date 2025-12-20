@@ -106,3 +106,4 @@ Test with different scenarios:
 - Duplicate email
 - Missing required fields
 - Network errors
+
