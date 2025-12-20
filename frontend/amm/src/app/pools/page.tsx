@@ -2,6 +2,7 @@ import { AddLiquidity } from "@/components/add-liquidity";
 import { CreatePool } from "@/components/create-pool";
 import { PoolsList } from "@/components/pools";
 import { RemoveLiquidity } from "@/components/remove-liquidity";
+import { ChainhooksManager } from "@/components/chainhooks-manager";
 import { getAllPools } from "@/lib/amm";
 
 export default async function Pools() {
@@ -22,6 +23,8 @@ export default async function Pools() {
           </>
         ) : null}
       </div>
+      <hr />
+      <ChainhooksManager />
     </main>
   );
 }
