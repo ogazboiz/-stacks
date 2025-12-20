@@ -1,8 +1,0 @@
-[network]
-name = "mainnet"
-stacks_node_rpc_address = "https://api.hiro.so"
-deployment_fee_rate = 10
-
-[accounts.ogaboiz]
-# - Ogaboiz (Prince)-
-mnemonic = "caught auction cherry exact flock argue tuition remember fork link sample opinion clock vapor island receive mail enforce trial disorder fiction depend sense explain"
