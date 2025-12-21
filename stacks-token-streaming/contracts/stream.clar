@@ -173,17 +173,20 @@
     (new-payment-per-block uint)
     (new-timeframe (tuple (start-block uint) (stop-block uint)))
   )
-  (let (
-    (stream (unwrap! (map-get? streams stream-id) (sha256 0)))
-    (msg (concat 
-           (concat 
-             (unwrap-panic (to-consensus-buff? stream)) 
-             (unwrap-panic (to-consensus-buff? new-payment-per-block))
-           ) 
-           (unwrap-panic (to-consensus-buff? new-timeframe))
-         ))
-  )
-    (sha256 msg)
+  (match (map-get? streams stream-id)
+    stream
+    (let (
+      (msg (concat 
+             (concat 
+               (unwrap-panic (to-consensus-buff? stream)) 
+               (unwrap-panic (to-consensus-buff? new-payment-per-block))
+             ) 
+             (unwrap-panic (to-consensus-buff? new-timeframe))
+           ))
+    )
+      (sha256 msg)
+    )
+    (sha256 0x00)
   )
 )
 

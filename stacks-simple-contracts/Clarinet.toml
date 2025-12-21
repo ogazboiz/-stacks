@@ -1,21 +1,10 @@
 [project]
-name = 'stacks-token-streaming'
+name = 'stacks-simple-contracts'
 description = ''
 authors = []
 telemetry = true
 cache_dir = '.\.cache'
 requirements = []
-
-# [contracts.stream]
-# path = 'contracts/stream.clar'
-# clarity_version = 3
-# epoch = 'latest'
-
-[contracts.simple-counter]
-path = 'contracts/simple-counter.clar'
-clarity_version = 3
-epoch = 'latest'
-
 [contracts.greeter]
 path = 'contracts/greeter.clar'
 clarity_version = 3
@@ -26,6 +15,10 @@ path = 'contracts/note-keeper.clar'
 clarity_version = 3
 epoch = 'latest'
 
+[contracts.simple-counter]
+path = 'contracts/simple-counter.clar'
+clarity_version = 3
+epoch = 'latest'
 [repl.analysis]
 passes = ['check_checker']
 

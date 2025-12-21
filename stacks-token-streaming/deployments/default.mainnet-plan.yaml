@@ -1,0 +1,32 @@
+---
+id: 0
+name: Mainnet deployment
+network: mainnet
+stacks-node: "https://api.hiro.so"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoin.blockstack.com:8332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: greeter
+            expected-sender: SPA43VC8660WWNRHHWSXGK2VR4BVHGWN0YQ5YXQH
+            cost: 2880
+            path: "contracts\\greeter.clar"
+            anchor-block-only: true
+            clarity-version: 3
+        - contract-publish:
+            contract-name: note-keeper
+            expected-sender: SPA43VC8660WWNRHHWSXGK2VR4BVHGWN0YQ5YXQH
+            cost: 3290
+            path: "contracts\\note-keeper.clar"
+            anchor-block-only: true
+            clarity-version: 3
+        - contract-publish:
+            contract-name: simple-counter
+            expected-sender: SPA43VC8660WWNRHHWSXGK2VR4BVHGWN0YQ5YXQH
+            cost: 2870
+            path: "contracts\\simple-counter.clar"
+            anchor-block-only: true
+            clarity-version: 3
+      epoch: "3.2"
